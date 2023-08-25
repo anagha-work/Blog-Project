@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<div class="col-lg-4">
+  <div class="card border border-primary h-100">
+    <a href="{% url 'course-details' course.course_slug %}">
+      <img src="{{course.course_image.url}}" class="card-img-top shadow-sm p-3 mb-6 bg-body-tertiary rounded"
+        alt="{{course.course_name}}" style="height: 200px;">
+      <hr>
+    </a>
+    <div class="card-body" style="display: flex;flex-direction: column;justify-content: space-between;">
+      <div>
+        <h5 class="card-title">{{course.course_name}}</h5>
+        <!-- <h6 class="card-title">{{course.course_title}}</h6> -->
+
+        <p class="card-text">{{course.excerpt}}</p>
+        <p>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            click on
+          </a>
+        <div class="collapse" id="collapseExample">
+          <div>
+            <p class="card-text">{{course.content}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <p class="card-text"><small class="text-body-secondary"> {{ course.release_date | date:"D d M Y" }}</small></p>
+      </div>
+    </div>
+  </div>
+  </a>
+</div>

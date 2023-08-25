@@ -1,0 +1,10 @@
+.image-size{
+    border: 30%
+}
+
+.card-content-wrapper .card-body{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+

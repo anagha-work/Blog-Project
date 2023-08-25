@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'posts/css/homepage.css' %}">
+
+{% endblock %}
+
+{% block page_title %} 
+    Blog page
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        <div class="card mb-3 border border border-info">
+            <div class="row g-0">
+                <div class="col-md-4 shadow-sm p-3 mb-6">
+                    <img src="{% static 'images/coding.jpg' %}" class="img-fluid border-radius" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">About Myself</h5>
+                        <p class="card-text">Hello My name is Anagha, I am learning python-django.</p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+                <!-- <div class="container">
+                    <div>
+                        <a href="{% url 'all_courses' %}"><h4>All Courses</h4></a>
+                        <a href="{% url 'form' %}"><h4> Form </h4></a>
+                         all_courses it is the keyword argument in ulrs.py name
+                    </div>
+                </div> -->
+                <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="javascript:void()">Navbar</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'all_courses' %}">All Courses</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'form' %}">Form</a>
+                          </li>
+                      </div>
+                    </div>
+                </nav>
+                
+                <div class="row image-size">
+                    {% for course in courses %}
+                        {% include 'posts/include/courses.html' %}
+                    {% endfor %}
+                </div>
+        </div>
+    </section>
+{% endblock%}
